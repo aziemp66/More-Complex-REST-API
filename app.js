@@ -3,7 +3,11 @@ const express = require("express");
 const db = require("./data/database");
 const todoroutes = require("./routes/todo.routes");
 
+const enableCors = require("./middlewares/cors.js");
+
 const app = express();
+
+app.use(enableCors);
 
 app.use(express.json());
 
